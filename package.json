@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "tinie: 🪄 Tiny framework that simply converts JavaScript functions into Restful APIs",
   "main": "dist/tinie.js",
+  "files": [
+    "dist"
+  ],
   "types": "dist/tinie.d.ts",
   "scripts": {
     "build": "tsc"
