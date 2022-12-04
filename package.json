@@ -1,0 +1,35 @@
+{
+  "name": "tinie",
+  "version": "0.0.1",
+  "description": "tinie: 🪄 Tiny framework that simply converts JavaScript functions into Restful APIs",
+  "main": "dist/tinie.js",
+  "types": "dist/tinie.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h4wldev/tinie.git"
+  },
+  "keywords": [
+    "tinie",
+    "rest",
+    "api",
+    "framework"
+  ],
+  "author": "Junho Kim (h4wldev@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h4wldev/tinie/issues"
+  },
+  "homepage": "https://github.com/h4wldev/tinie",
+  "devDependencies": {
+    "@types/node": "^18.11.10",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "fastify": "^4.10.2",
+    "stringify-parameters": "^0.0.7"
+  }
+}
