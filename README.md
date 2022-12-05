@@ -1,6 +1,8 @@
 # Tinie 🪄
 Tinie is tiny framework that simply converts JavaScript functions into Restful APIs inspired by [Tanmoy741127/lumi](https://github.com/Tanmoy741127/lumi)
 
+<img src="https://user-images.githubusercontent.com/14465407/205534726-a659c2e1-148e-479d-abf1-021de675e1b5.png" width="500" />
+
 ### Feature
 - Create __Restful API__ route from javascript functions
 - Validate parameter with type or types
