@@ -4,6 +4,7 @@ Tinie is tiny framework that simply converts JavaScript functions into Restful A
 ### Feature
 - Create __Restful API__ route from javascript functions
 - Validate parameter with type or types
+- Support depth(/) and dash(-) route from function's name
 - Tinie server wrtten with Fastify
 
 ### How to start 🚀
@@ -14,9 +15,12 @@ Tinie is tiny framework that simply converts JavaScript functions into Restful A
 
 2. Write functions and join function into Tinie
 ```javascript
-import Tinie from "tinie";
+import Tinie from "./tinie";
 
-const calculator = (
+// uppercase replace with dash(-), ex) /helloWorld -> /hello-world
+// underscore(_) replace with slash(/), ex) /hello_world -> /hello/world
+// So, CalculatorExample_test -> /calculator-example/test
+const CalculatorExample_test = (
   operation: "add" | "subtract" | "multiply" | "divide" = "divide", // if you set default value on parameter, it's optional
   a: number,
   b: number
@@ -41,10 +45,12 @@ const calculatorParamTypes = {
 
 const tinie = new Tinie()
 
-tinie.register(calculator, {
-  // route: 'calc', // you can set custom routing like this
-  types: calculatorParamTypes
-})
+tinie.register(
+  CalculatorExample_test,
+  {
+    types: calculatorParamTypes
+  }
+)
 
 tinie.listen()
 ```

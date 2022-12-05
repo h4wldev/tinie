@@ -23,7 +23,7 @@ export class Tinie {
         console.error(err)
         process.exit(1)
       }
-      console.log(`Tinie server listening at ${address}`)
+      console.log(`[Tinie] Server listening at ${address}`)
     })
   }
 
@@ -33,9 +33,26 @@ export class Tinie {
   ): void {
     const parsed = new FunctionParser(func)
 
+    let route = options.route
+
+    if (!route) {
+      const _route = parsed.name
+        .replace(/[A-Z]/g, m => '-' + m.toLowerCase())
+        .replace(/_/g, '/')
+        .replace(/^-/, '')
+
+      route = _route
+    }
+
+    if (!route?.startsWith('/')) {
+      route = `/${route}`
+    }
+
+    console.log(`[Tinie] Registering ${parsed.name} to ${route}`)
+
     this._server.route({
       method: 'POST',
-      url: `/${options.route ?? parsed.name}`,
+      url: route,
       handler: async (request, reply) => {
         let params = []
 
